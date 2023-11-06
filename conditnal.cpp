@@ -11,5 +11,5 @@ int main()
     printf("Enter C value :");
     scanf("%d", &c);
 
-    a > b && a > c ? printf("A is big") : (b > c ? printf("B is big") : printf("C is big"));
+    a > b &&a > c ? printf("A is big") : (b > c ? printf("B is big") : printf("C is big"));
 }
