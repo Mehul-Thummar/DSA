@@ -14,7 +14,7 @@ int main()
     printf("\nA: %d A: %d A: %d", a++, ++a, a++);
     printf("\nA: %d A: %d A: %d", a++, ++a, ++a);
     printf("\nA: %d A: %d A: %d", ++a, ++a, ++a);
-    printf("\nA: %d A: %d A: %d", ++a, ++a, a++);
+    printf("\nA: %d A: %d A: %d", ++a, ++a, a++); 
     printf("\nA: %d A: %d A: %d", a++, ++a, a++);
     printf("\nA: %d A: %d A: %d", ++a, a++, ++a);
     printf("\nA: %d A: %d A: %d A: %d", a++, ++a, a++, ++a);

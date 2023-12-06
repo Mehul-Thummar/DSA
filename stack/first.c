@@ -18,7 +18,7 @@ int display()
     printf("\n");
 }
 
-int insertEnd(int val)
+int insertfirst(int val)
 {
     if (top >= n - 1)
     {
@@ -31,33 +31,13 @@ int insertEnd(int val)
     }
 }
 
-int deletEnd()
-{
-    if (top < 0)
-    {
-        printf("Stack is already empty.....\n");
-    }
-    else
-    {
-        top--;
-        //a[top] = top;
-    }
-}
-
 int main()
 {
-    insertEnd(10);
-    insertEnd(20);
-    insertEnd(30);
-    insertEnd(40);
-    insertEnd(50);
-    insertEnd(60);
-    display();
-
-    deletEnd();
-    deletEnd();
-    deletEnd();
-    deletEnd();
-    deletEnd();
+    insertfirst(10);
+    insertfirst(20);
+    insertfirst(30);
+    insertfirst(40);
+    insertfirst(50);
+    insertfirst(60);
     display();
 }
