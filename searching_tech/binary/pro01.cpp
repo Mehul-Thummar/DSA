@@ -19,14 +19,12 @@ int binary_search(int n, int min, int max)
         max = mid;
         return binary_search(n, min, max);
     }
-   
 }
 
 int main()
 {
-    int i, j, k, x = 6, mid, min, max, result;
-    int arr[10] = {1, 1, 7, 1, 4, 1, 6, 1, 2, 1};
-
+    int i, j, k, x = 80, mid, min, max, result;
+    int arr[10] = {11, 13, 17, 21, 24, 31, 36, 51, 62, 80};
     for (i = 0; i < 9; i++)
     {
 
@@ -44,17 +42,22 @@ int main()
     {
         printf("%d ", arr[i]);
     }
+    printf("\nEnter search number:");
+    scanf("%d", &k);
 
     min = arr[0];
     max = arr[9];
 
     result = binary_search(x, min, max);
 
-    if (result == 1)
+    if (arr[i] == k)
     {
         printf("\nX is present in an array");
     }
-    
+    else
+    {
+        printf("\nX is not present in an array");
+    }
 
     return 0;
 }
