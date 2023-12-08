@@ -1,3 +1,0 @@
-deletEnd();
-    // deletEnd();
-    
