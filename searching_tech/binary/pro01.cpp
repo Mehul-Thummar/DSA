@@ -23,7 +23,7 @@ int binary_search(int n, int min, int max)
 
 int main()
 {
-    int i, j, k, x = 80, mid, min, max, result;
+    int i, j, k, x = 11, mid, min, max, result;
     int arr[10] = {11, 13, 17, 21, 24, 31, 36, 51, 62, 80};
     for (i = 0; i < 9; i++)
     {
