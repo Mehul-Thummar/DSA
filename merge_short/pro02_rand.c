@@ -47,9 +47,9 @@ int main()
     int arr1[5], n = 5, i;
     for (i = 0; i < n; i++)
     {
-        arr1[i] = rand() % 9 + 1;
+        arr1[i] = rand() % 99 + 1;
     }
-    printf("Before shorting Array is: ");
+    printf("Before shorting Array is:\n");
 
     for (i = 0; i < n; i++)
     {
@@ -57,7 +57,7 @@ int main()
     }
 
     mergesort(arr1, 0, n - 1);
-    printf("\nAfter shorting Array is: ");
+    printf("\nAfter shorting Array is:\n");
     for (i = 0; i < n; i++)
     {
         printf("%d ", arr1[i]);
