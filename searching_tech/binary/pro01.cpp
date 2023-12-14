@@ -23,11 +23,11 @@ int binary_search(int n, int min, int max)
 
 int main()
 {
-    int i, j, k, x , mid, min, max, result;
+    int i, j, x, mid, min, max, result;
     int arr[10] = {11, 13, 17, 21, 24, 31, 36, 51, 62, 80};
-    for (i = 0; i < 9; i++)
+    for (i = 0; i <= 9; i++)
     {
-        for (j = 9; j >= i + 1; j--)
+        for (j = i + 1; j <= 9; j--)
         {
             if (arr[i] > arr[j])
             {
@@ -42,14 +42,14 @@ int main()
         printf("%d ", arr[i]);
     }
     printf("\nEnter search number:");
-    scanf("%d", &k);
+    scanf("%d ", &x);
 
     min = arr[0];
     max = arr[9];
 
     result = binary_search(x, min, max);
 
-    if (arr[i] == x)
+    if (result == 1)
     {
         printf("\nNum is present in an array");
     }
