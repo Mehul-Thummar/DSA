@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <>
+#include <stdlib.h>
 
 void merge(int arr1[], int min, int mid, int max)
 {
@@ -44,19 +44,20 @@ int mergesort(int arr1[], int min, int max)
 
 int main()
 {
-    int arr1[15], n = 15, i;
+    int arr1[5], n = 5, i;
     for (i = 0; i < n; i++)
     {
-        arr1[i] = rand() % 99 + 1;
-        printf("Before shorting Array is:\n");
+        arr1[i] = rand() % 9 + 1;
     }
+    printf("Before shorting Array is: ");
+
     for (i = 0; i < n; i++)
     {
         printf("%d ", arr1[i]);
     }
 
     mergesort(arr1, 0, n - 1);
-    printf("\nAfter shorting Array is:\n");
+    printf("\nAfter shorting Array is: ");
     for (i = 0; i < n; i++)
     {
         printf("%d ", arr1[i]);
