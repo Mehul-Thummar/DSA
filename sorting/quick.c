@@ -13,7 +13,7 @@ void print(int a[])
 }
 void quicksort(int a[], int first, int last)
 {
-    int i, j, pivot;
+    int i, temp, j, pivot;
     if (first < last)
     {
         // print(a);
@@ -33,13 +33,13 @@ void quicksort(int a[], int first, int last)
 
             if (i < j)
             {
-                a[i] = a[i] + a[j];
-                a[j] = a[i] - a[j];
-                a[i] = a[i] - a[j];
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
             }
-            a[pivot] = a[pivot] + a[j];
-            a[j] = a[pivot] - a[j];
-            a[pivot] = a[j] - a[pivot];
+            temp = a[pivot];
+            a[pivot] = a[j];
+            a[j] = temp;
 
             quicksort(a, first, j - 1);
             quicksort(a, j + 1, last);
