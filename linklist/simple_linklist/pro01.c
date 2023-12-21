@@ -1,35 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct node
 {
     int data;
-
     struct node *next;
 };
-
 struct node *head = NULL;
 
 void insertend(int val)
 {
     struct node *ptr = head;
     struct node *temp = malloc(sizeof(struct node));
-
     temp->data = val;
     temp->next = NULL;
+
     if (head == NULL)
     {
         head = temp;
         return;
     }
-
     while (ptr->next != NULL)
     {
         ptr = ptr->next;
     }
     ptr->next = temp;
+
     return;
 }
+
 void insertfirst(int val)
 {
     struct node *ptr = head;
@@ -37,9 +35,15 @@ void insertfirst(int val)
     temp->data = val;
     temp->next = head;
 
+    if (head == NULL)
+    {
+        head = temp;
+        return;
+    }
     head = temp;
 }
-void insertMid(int position, int val)
+
+void insertmid(int position, int val)
 {
     struct node *ptr = head;
     struct node *temp = malloc(sizeof(struct node));
@@ -55,12 +59,12 @@ void insertMid(int position, int val)
     return;
 }
 
-void deleteend()
+void deleteEnd()
 {
     struct node *ptr = head, *p;
     if (head == NULL)
     {
-        printf("List is already empty.\n");
+        printf("list is alredey empty....");
     }
     else if (head->next == NULL)
     {
@@ -85,11 +89,11 @@ void deletefirst()
     struct node *ptr = head, *p;
     if (head == NULL)
     {
-        printf("List is already empty.\n");
+        printf("list is alredey empty....");
     }
-    if (head = ptr->next)
+    else if (ptr = head)
     {
-        head = NULL;
+        head = head->next;
         free(ptr);
     }
 }
@@ -115,7 +119,7 @@ void display()
     struct node *ptr = head;
     if (head == NULL)
     {
-        printf("List is empty.");
+        printf("\nlist is empty...");
     }
     else
     {
@@ -130,28 +134,38 @@ void display()
 
 int main()
 {
-    insertend(10);
-    insertend(20);
-    insertend(30);
-    insertend(40);
-    insertend(50);
-    insertend(60);
-    insertend(70);
-    insertend(80);
-    insertfirst(100);
-    // insertMid(60,90);
-
+    insertend(100);
+    insertend(200);
+    insertend(300);
+    insertend(400);
+    insertend(500);
+    insertend(600);
+    insertend(700);
+    insertend(800);
+    printf("Insert End Position.\n");
     display();
-
-    deleteend();
-    deleteend();
-    deleteend();
-    deleteend();
-    deleteend();
-    deleteend();
-    deleteend();
-    deleteend();
+    insertfirst(10);
+    insertfirst(20);
+    insertfirst(30);
+    insertfirst(40);
+    insertfirst(50);
+    display();
+    insertmid(30,800);
+    display();
+    // deleteEnd();
     deletefirst();
-
+    deletefirst();
+    deletefirst();
+    deletefirst();
+    deletefirst();
+    deletefirst();
+    // deleteEnd();
+    // deleteEnd();
+    // deleteEnd();
+    // deleteEnd();
+    // deleteEnd();
+    // deleteEnd();
+    // deleteEnd();
+    // deleteEnd();
     display();
 }
