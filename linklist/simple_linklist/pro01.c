@@ -152,7 +152,6 @@ int main()
     display();
     insertmid(30,800);
     display();
-    // deleteEnd();
     deletefirst();
     deletefirst();
     deletefirst();
