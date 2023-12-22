@@ -117,7 +117,7 @@ void insertmid(int position,int val)
     return;
 }
 
-void deletmid(int position)
+void deletemid(int position)
 {
     struct node *ptr = head;
     struct node *prev, *p;
@@ -152,17 +152,40 @@ void display()
 
 int main()
 {
-    insertend(100);
+   insertend(100);
     insertend(200);
     insertend(300);
     insertend(400);
     insertend(500);
     insertend(600);
+    insertend(700);
+    insertend(800);
+    printf("InsertEnd Position.\n");
+    display();
     deleteEnd();
-    insertfirst(50);
-    deletefirst();
-    insertmid(600,20);
-    deletmid(200);
+    deleteEnd();
+    deleteEnd();
+    deleteEnd();
+    printf("DeleteEnd Position.\n");
+    display();
 
+    insertfirst(500);
+    insertfirst(600);
+    insertfirst(700);
+    insertfirst(800);
+    printf("InsertFirst Position.\n");
+    display();
+    deletefirst();
+    deletefirst();
+    deletefirst();
+    printf("DeleteFirst Position.\n");
+    display();
+
+    insertmid(300, 900);
+    printf("InsertMid Position.\n");
+    display();
+
+    deletemid(300);
+    printf("DeleteMid Position.\n");
     display();
 }

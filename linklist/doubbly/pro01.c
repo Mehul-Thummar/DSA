@@ -4,6 +4,7 @@ struct node
 {
     int data;
     struct node *next;
+    struct node *prev;
 };
 struct node *head = NULL;
 
@@ -13,6 +14,7 @@ void insertend(int val)
     struct node *temp = malloc(sizeof(struct node));
     temp->data = val;
     temp->next = NULL;
+    temp->prev = NULL;
 
     if (head == NULL)
     {
@@ -24,8 +26,7 @@ void insertend(int val)
         ptr = ptr->next;
     }
     ptr->next = temp;
-
-    return;
+    ptr->prev = temp;
 }
 
 void insertfirst(int val)
@@ -34,6 +35,7 @@ void insertfirst(int val)
     struct node *temp = malloc(sizeof(struct node));
     temp->data = val;
     temp->next = head;
+    temp->prev = head;
 
     if (head == NULL)
     {
@@ -49,13 +51,16 @@ void insertmid(int position, int val)
     struct node *temp = malloc(sizeof(struct node));
     temp->data = val;
     temp->next = NULL;
+    temp->prev = NULL;
 
     while (ptr->data != position)
     {
         ptr = ptr->next;
     }
     temp->next = ptr->next;
+    temp->prev = ptr->prev;
     ptr->next = temp;
+    ptr->prev = temp;
     return;
 }
 
@@ -170,4 +175,5 @@ int main()
     deletemid(300);
     printf("DeleteMid Position.\n");
     display();
+
 }
