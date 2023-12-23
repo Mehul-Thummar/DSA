@@ -80,7 +80,7 @@ void deletefirst()
     free(ptr);
 }
 
-void insertmid(int val, int position)
+void insertmid(int position, int val)
 {
     struct node *ptr = head, *p;
     struct node *temp = malloc(sizeof(struct node));
@@ -106,12 +106,12 @@ void insertmid(int val, int position)
     return;
 }
 
-void deletmid(int pos)
+void deletemid(int position)
 {
     struct node *ptr = head;
     struct node *prev;
 
-    while (ptr->data != pos)
+    while (ptr->data != position)
     {
         prev = ptr;
         ptr = ptr->next;
@@ -151,11 +151,34 @@ int main()
     insertend(400);
     insertend(500);
     insertend(600);
+    insertend(700);
+    insertend(800);
+    printf("InsertEnd Position.\n");
+    display();
     deleteEnd();
-    insertfirst(50);
-    deletefirst();
-    insertmid(599, 4);
-    deletmid(300);
+    deleteEnd();
+    deleteEnd();
+    deleteEnd();
+    printf("DeleteEnd Position.\n");
+    display();
 
+    insertfirst(500);
+    insertfirst(600);
+    insertfirst(700);
+    insertfirst(800);
+    printf("InsertFirst Position.\n");
+    display();
+    deletefirst();
+    deletefirst();
+    deletefirst();
+    printf("DeleteFirst Position.\n");
+    display();
+
+    insertmid(100, 900);
+    printf("InsertMid Position.\n");
+    display();
+
+    deletemid(200);
+    printf("DeleteMid Position.\n");
     display();
 }

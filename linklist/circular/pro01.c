@@ -98,7 +98,7 @@ void deletefirst()
     free(p);
 }
 
-void insertmid(int position,int val)
+void insertmid(int position, int val)
 {
     struct node *ptr = head, *p;
     struct node *temp = malloc(sizeof(struct node));
@@ -152,7 +152,7 @@ void display()
 
 int main()
 {
-   insertend(100);
+    insertend(100);
     insertend(200);
     insertend(300);
     insertend(400);

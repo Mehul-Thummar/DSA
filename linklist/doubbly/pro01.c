@@ -51,16 +51,13 @@ void insertmid(int position, int val)
     struct node *temp = malloc(sizeof(struct node));
     temp->data = val;
     temp->next = NULL;
-    temp->prev = NULL;
 
     while (ptr->data != position)
     {
         ptr = ptr->next;
     }
     temp->next = ptr->next;
-    temp->prev = ptr->prev;
     ptr->next = temp;
-    ptr->prev = temp;
     return;
 }
 
@@ -91,17 +88,13 @@ void deleteEnd()
 
 void deletefirst()
 {
-    struct node *ptr = head, *p;
-    if (head == NULL)
+    struct node *ptr = head;
+    head = ptr->next;
+    if (head != NULL)
     {
-        printf("list is alredey empty....");
+        head->prev = NULL;
     }
-    else if (ptr = head)
-    {
-        head = head->next;
-        head = head->prev;
-        free(ptr);
-    }
+    free(ptr);
 }
 
 void deletemid(int position)
@@ -116,7 +109,6 @@ void deletemid(int position)
     }
 
     prev->next = ptr->next;
-    prev->prev = ptr->prev;
     free(ptr);
     return;
 }
@@ -177,5 +169,4 @@ int main()
     deletemid(300);
     printf("DeleteMid Position.\n");
     display();
-
 }
