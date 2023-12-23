@@ -99,6 +99,7 @@ void deletefirst()
     else if (ptr = head)
     {
         head = head->next;
+        head = head->prev;
         free(ptr);
     }
 }
@@ -115,6 +116,7 @@ void deletemid(int position)
     }
 
     prev->next = ptr->next;
+    prev->prev = ptr->prev;
     free(ptr);
     return;
 }
